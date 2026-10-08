@@ -114,7 +114,7 @@ const QuizComponent = () => {
         
         // First, let's see what's actually in the database for this subject
         const { data: allQuestions, error: checkError } = await supabase
-          .from('jmis_cbtQuestions')
+          .from('bluebell_cbtQuestions')
           .select('subject, class, purpose, term')
           .ilike('subject', `%${subject?.trim() || ''}%`);
         
@@ -156,13 +156,13 @@ const QuizComponent = () => {
         };
 
         const searchPapers = async (columns) => withPaperFilters(
-          supabase.from('jmis_cbtQuestions').select(columns)
+          supabase.from('bluebell_cbtQuestions').select(columns)
         );
 
         let result = await searchPapers('id, questions, subject, class, purpose, term, maxScore, created_at');
         if (result.error && /maxScore/i.test(result.error.message || '')) {
           // The paper is still gradeable at one mark per question, so the exam must
-          // open even before jmis_cbt_max_score.sql has been run
+          // open even before bluebell_cbt_max_score.sql has been run
           result = await searchPapers('id, questions, subject, class, purpose, term, created_at');
         }
 
@@ -214,7 +214,7 @@ const QuizComponent = () => {
     const fetchAdminPassword = async () => {
       try {
         const { data, error } = await supabase
-          .from('jmis_settings')
+          .from('bluebell_settings')
           .select('cbtPassword');
         if (error) throw error;
         // Use the first row if data exists, otherwise default to empty string
@@ -234,7 +234,7 @@ const QuizComponent = () => {
       try {
         // Test connectivity with a quick Supabase query
         const { error } = await supabase
-          .from('jmis_cbtQuestions')
+          .from('bluebell_cbtQuestions')
           .select('id')
           .limit(1)
           .maybeSingle();
@@ -924,7 +924,7 @@ const QuizComponent = () => {
   const fetchStudentId = async (studentName, studentClass) => {
     try {
       const { data, error } = await supabase
-        .from("jmis_student")
+        .from("bluebell_student")
         .select("id")
         .eq("name", studentName)
         .eq("class", studentClass)
@@ -972,7 +972,7 @@ const QuizComponent = () => {
   const loadPaper = async (examRowId) => {
     try {
       const read = async (columns) => supabase
-        .from('jmis_cbtQuestions')
+        .from('bluebell_cbtQuestions')
         .select(columns)
         .eq('id', examRowId)
         .maybeSingle();
@@ -997,7 +997,7 @@ const QuizComponent = () => {
     if (direct) return direct;
     try {
       const { data } = await supabase
-        .from("jmis_student")
+        .from("bluebell_student")
         .select("id")
         .ilike("name", name.trim())
         .ilike("class", String(newClass || '').trim().replace(/\s+/g, '%'))
@@ -1042,10 +1042,10 @@ const QuizComponent = () => {
 
     const termKey = termKeyFor(job.termLabel);
 
-    // Newest row for this student: some students hold more than one jmis_result
+    // Newest row for this student: some students hold more than one bluebell_result
     // row, and maybeSingle() would silently pick either of them
     const { data: rows, error: readError } = await supabase
-      .from('jmis_result')
+      .from('bluebell_result')
       .select(`id, studentId, ${termKey}`)
       .eq('studentId', job.studentId)
       .order('id', { ascending: false })
@@ -1096,7 +1096,7 @@ const QuizComponent = () => {
         ? storedSubjects.map((e, i) => (i === index ? entry : e))
         : [...storedSubjects, entry];
       const { error: updateError } = await supabase
-        .from('jmis_result')
+        .from('bluebell_result')
         .update({ [termKey]: merged })
         .eq('id', row.id);
       if (updateError) {
@@ -1110,7 +1110,7 @@ const QuizComponent = () => {
           ? entry
           : { subjectName: subj, test: "", grade: "", total: 0, remark: "", project: "", examination: "" }))
         : [entry];
-      const { error: insertError } = await supabase.from('jmis_result').insert([{
+      const { error: insertError } = await supabase.from('bluebell_result').insert([{
         studentId: job.studentId,
         studentName: job.studentName,
         studentClass: job.studentClass ? String(job.studentClass).toUpperCase() : "",
@@ -1127,12 +1127,12 @@ const QuizComponent = () => {
     // must never lose a student's marks.
     try {
       const { data: existingClaim } = await supabase
-        .from('jmis_cbt_results')
+        .from('bluebell_cbt_results')
         .select('id')
         .eq('submissionKey', job.submissionKey)
         .maybeSingle();
       if (!existingClaim) {
-        const { error: claimError } = await supabase.from('jmis_cbt_results').insert([{
+        const { error: claimError } = await supabase.from('bluebell_cbt_results').insert([{
           studentId: job.studentId,
           studentName: job.studentName,
           studentClass: job.studentClass,

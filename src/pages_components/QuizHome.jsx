@@ -36,7 +36,7 @@ const QuizHome = () => {
     const fetchAdminPassword = async () => {
       try {
         const { data, error } = await supabase
-          .from('jmis_settings')
+          .from('bluebell_settings')
           .select('cbtPassword');
         if (error) throw error;
         // Use the first row if data exists, otherwise default to empty string
@@ -52,7 +52,7 @@ const QuizHome = () => {
     const fetchStudents = async () => {
       try {
         const { data, error } = await supabase
-          .from('jmis_student') // Assuming 'students' is the table name
+          .from('bluebell_student') // Assuming 'students' is the table name
           .select('name, class, passport'); // Adjust the field names as necessary
         if (error) throw error;
         const sortedStudents = data.map(student => ({ name: student.name, class: student.class }));
@@ -78,7 +78,7 @@ const QuizHome = () => {
       if (searchName && searchClass) {
         try {
           const { data, error } = await supabase
-            .from('jmis_student')
+            .from('bluebell_student')
             .select('passport')
             .eq('name', searchName)
             .eq('class', searchClass)
@@ -108,15 +108,15 @@ const QuizHome = () => {
     const fetchSubjects = async () => {
       try {
         // Determine table based on session type
-        let tableName = 'jmis_cbtQuestions';
-        if (sessionType === 'completion') tableName = 'jmis_cbt_completion';
-        else if (sessionType === 'essay') tableName = 'jmis_cbt_essay';
+        let tableName = 'bluebell_cbtQuestions';
+        if (sessionType === 'completion') tableName = 'bluebell_cbt_completion';
+        else if (sessionType === 'essay') tableName = 'bluebell_cbt_essay';
 
         const allColumns = 'subject, class, duration, questions, image, purpose, term, maxScore, created_at, updated_at';
 
         let result = await supabase.from(tableName).select(allColumns);
         if (result.error && /maxScore/i.test(result.error.message || '')) {
-          // The declared-marks column is optional until jmis_cbt_max_score.sql has
+          // The declared-marks column is optional until bluebell_cbt_max_score.sql has
           // been run: the list must still load, defaulting to one mark per question
           result = await supabase.from(tableName).select(allColumns.replace(', maxScore', ''));
         }

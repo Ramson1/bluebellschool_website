@@ -9,7 +9,7 @@ import News from "../components/News";
 import Faq from "../components/Faq";
 
 // Public home page — marketing sections only; all data comes from the
-// admin-managed jmis_settings row (same content pipeline as the old site).
+// admin-managed bluebell_settings row (same content pipeline as the old site).
 export default function Home() {
   return (
     <>

@@ -5,7 +5,7 @@ import { useSettings } from "../lib/useSettings";
 import { settingFileUrl } from "../lib/supabaseClient";
 import { RiBuildingLine } from "react-icons/ri";
 
-// Facilities grid fed by jmis_settings.facilitiesContent [{image, heading, content}].
+// Facilities grid fed by bluebell_settings.facilitiesContent [{image, heading, content}].
 export default function Facilities() {
   const { settings } = useSettings();
   const facilities = settings?.facilitiesContent || [];

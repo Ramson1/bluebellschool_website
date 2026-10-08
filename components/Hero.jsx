@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useSettings } from "../lib/useSettings";
 import { settingFileUrl } from "../lib/supabaseClient";
 
-// Full-bleed hero carousel fed by jmis_settings.heroContent (managed on the
+// Full-bleed hero carousel fed by bluebell_settings.heroContent (managed on the
 // admin Settings page) with the two parent-facing CTAs.
 export default function Hero() {
   const { settings } = useSettings();

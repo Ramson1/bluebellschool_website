@@ -3,7 +3,7 @@
 import React from "react";
 import { useSettings } from "../lib/useSettings";
 
-// Mission + principal's welcome, both fed by jmis_settings.aboutContent
+// Mission + principal's welcome, both fed by bluebell_settings.aboutContent
 // (managed on the admin Settings page — same fields as the old site).
 export default function About() {
   const { settings } = useSettings();

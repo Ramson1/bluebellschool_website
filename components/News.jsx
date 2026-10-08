@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import { supabase } from "../lib/supabaseClient";
 import { RiMegaphoneLine, RiCalendarLine } from "react-icons/ri";
 
-// News & events strip fed by jmis_announcements rows with audience='public'
+// News & events strip fed by bluebell_announcements rows with audience='public'
 // (posted from the admin dashboard / staff portal). Table may not exist yet —
 // the fetch degrades gracefully to an empty list.
 export default function News() {
@@ -14,7 +14,7 @@ export default function News() {
     let cancelled = false;
     Promise.resolve(
       supabase
-        .from("jmis_announcements")
+        .from("bluebell_announcements")
         .select("title, body, created_at")
         .eq("audience", "public")
         .order("created_at", { ascending: false })

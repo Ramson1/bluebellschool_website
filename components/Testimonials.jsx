@@ -5,7 +5,7 @@ import { useSettings } from "../lib/useSettings";
 import { settingFileUrl } from "../lib/supabaseClient";
 import { RiDoubleQuotesL } from "react-icons/ri";
 
-// Testimonials carousel fed by jmis_settings.testimonialContent [{text, image}].
+// Testimonials carousel fed by bluebell_settings.testimonialContent [{text, image}].
 export default function Testimonials() {
   const { settings } = useSettings();
   const items = settings?.testimonialContent || [];

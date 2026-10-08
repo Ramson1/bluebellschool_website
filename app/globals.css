@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-/* Bluebell brand — same green gradient used across the platform */
+/* Bluebell brand — deep blue palette used across the platform */
 @theme {
   --color-brand: #011b97;
   --color-brand-light: #022aa1;

@@ -9,7 +9,7 @@ import { RiMailLine, RiPhoneLine, RiMapPinLine, RiChat3Line } from "react-icons/
 const FIELD =
   "w-full rounded-xl border border-gray-200 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-light";
 
-// Enquiry capture: stores a jmis_enquiries row (admin follow-up pipeline)
+// Enquiry capture: stores a bluebell_enquiries row (admin follow-up pipeline)
 // AND emails the school via EmailJS — the old site only emailed and lost leads.
 export default function ContactPage() {
   const { settings } = useSettings();

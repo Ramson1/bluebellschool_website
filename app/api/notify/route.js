@@ -24,14 +24,14 @@ function createTransporter() {
   });
 }
 
-// School inbox comes from jmis_settings.adminEmail (shared Supabase project).
+// School inbox comes from bluebell_settings.adminEmail (shared Supabase project).
 async function getAdminEmail() {
   try {
     const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
     const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
     const supabase = createClient(supabaseUrl, supabaseAnonKey);
     const { data, error } = await supabase
-      .from('jmis_settings')
+      .from('bluebell_settings')
       .select('adminEmail')
       .limit(1);
     if (error) {

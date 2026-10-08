@@ -40,7 +40,7 @@ const EMPTY = {
 };
 
 // Admissions page: 3-step process + online application form. Writes
-// jmis_admissions_applications + a linked jmis_enquiries row (follow-up
+// bluebell_admissions_applications + a linked bluebell_enquiries row (follow-up
 // pipeline) and notifies the school by email.
 export default function AdmissionsPage() {
   const [busy, setBusy] = useState(false);

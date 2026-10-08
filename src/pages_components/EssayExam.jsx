@@ -64,7 +64,7 @@ const EssayExam = () => {
     const fetchQuestions = async () => {
       try {
         const withMax = await supabase
-          .from('jmis_cbt_essay')
+          .from('bluebell_cbt_essay')
           .select('id, questions, subject, class, purpose, term, maxScore, created_at')
           .ilike('subject', `%${subject?.trim() || ''}%`)
           .ilike('class', `%${newClass?.trim() || ''}%`)
@@ -74,7 +74,7 @@ const EssayExam = () => {
         // column has not been created yet, so the exam must open without it
         const result = withMax.error && /maxScore/i.test(withMax.error.message || '')
           ? await supabase
-            .from('jmis_cbt_essay')
+            .from('bluebell_cbt_essay')
             .select('id, questions, subject, class, purpose, term, created_at')
             .ilike('subject', `%${subject?.trim() || ''}%`)
             .ilike('class', `%${newClass?.trim() || ''}%`)
@@ -316,7 +316,7 @@ const EssayExam = () => {
   const fetchStudentId = async () => {
     try {
       const { data } = await supabase
-        .from('jmis_student')
+        .from('bluebell_student')
         .select('id')
         .eq('name', name)
         .eq('class', newClass)
@@ -326,7 +326,7 @@ const EssayExam = () => {
 
       // Same student recorded with different spacing or case
       const { data: fuzzy } = await supabase
-        .from('jmis_student')
+        .from('bluebell_student')
         .select('id')
         .ilike('name', String(name || '').trim())
         .ilike('class', String(newClass || '').trim().replace(/\s+/g, '%'))
@@ -343,13 +343,13 @@ const EssayExam = () => {
   // declared-marks column does not exist yet
   const loadPaper = async (rowId) => {
     const withMax = await supabase
-      .from('jmis_cbt_essay')
+      .from('bluebell_cbt_essay')
       .select('id, questions, subject, class, purpose, term, maxScore')
       .eq('id', rowId)
       .limit(1);
     if (withMax.error && /maxScore/i.test(withMax.error.message || '')) {
       return supabase
-        .from('jmis_cbt_essay')
+        .from('bluebell_cbt_essay')
         .select('id, questions, subject, class, purpose, term')
         .eq('id', rowId)
         .limit(1);
@@ -404,7 +404,7 @@ const EssayExam = () => {
 
     try {
       const { data: claim } = await supabase
-        .from('jmis_cbt_results')
+        .from('bluebell_cbt_results')
         .select('id')
         .eq('submissionKey', job.submissionKey)
         .limit(1);
@@ -435,13 +435,13 @@ const EssayExam = () => {
     };
     if (Number.isFinite(max) && max > 0) payload.maxScore = max;
 
-    let attempt = await supabase.from('jmis_cbt_results').insert([payload]);
+    let attempt = await supabase.from('bluebell_cbt_results').insert([payload]);
     if (attempt.error && /maxScore|submissionKey/i.test(attempt.error.message || '')) {
       // Migration not pasted yet: record the result without the new columns
       console.warn('⚠️ [Persist] Saving without the new columns:', attempt.error.message);
       delete payload.maxScore;
       delete payload.submissionKey;
-      attempt = await supabase.from('jmis_cbt_results').insert([payload]);
+      attempt = await supabase.from('bluebell_cbt_results').insert([payload]);
     }
     if (attempt.error) {
       console.error('❌ [Persist] Insert failed:', attempt.error);
@@ -522,7 +522,7 @@ Automated notification from Bluebell CBT System`;
       toast.error("Please enter the admin password.");
       return;
     }
-    const { data } = await supabase.from('jmis_settings').select('cbtPassword').single();
+    const { data } = await supabase.from('bluebell_settings').select('cbtPassword').single();
     if (passwordInput === data?.cbtPassword) {
       setAdminPassword(passwordInput);
       setIsLocked(false);
