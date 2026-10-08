@@ -1,0 +1,184 @@
+/* Detailed Results Modal Styles */
+
+.detailed-results-modal {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.detailed-results-modal h2 {
+  color: #2c3e50;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.detailed-results-modal h3 {
+  color: #34495e;
+  font-weight: 600;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+.detailed-results-modal h4 {
+  color: #2c3e50;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.nav-tabs .nav-link {
+  border: none;
+  color: #495057;
+  padding: 10px 20px;
+  transition: all 0.3s ease;
+}
+
+.nav-tabs .nav-link:hover {
+  background-color: #f8f9fa;
+}
+
+.nav-tabs .nav-link.active {
+  color: #007bff;
+  font-weight: 600;
+}
+
+.question-review-item {
+  transition: transform 0.2s ease;
+}
+
+.question-review-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.option-item {
+  transition: all 0.2s ease;
+}
+
+.option-item:hover {
+  transform: translateX(5px);
+}
+
+/* Print-specific styles */
+@media print {
+  @page {
+    margin: 1.5cm;
+    size: A4;
+  }
+  
+  body {
+    font-size: 11pt;
+  }
+  
+  .detailed-results-modal {
+    position: absolute;
+    width: 100%;
+    max-width: none;
+    overflow: visible !important;
+    height: auto !important;
+  }
+  
+  .detailed-results-modal-content {
+    max-height: none !important;
+    overflow: visible !important;
+  }
+  
+  .student-info-grid,
+  .exam-summary-grid {
+    display: grid !important;
+    page-break-inside: avoid;
+  }
+  
+  .summary-stat-card,
+  .student-info-card {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  
+  .question-review-card {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    margin-bottom: 15px;
+    page-break-after: always;
+  }
+  
+  button, 
+  .no-print,
+  .nav-tabs,
+  .print-button {
+    display: none !important;
+  }
+  
+  /* Ensure colors print correctly */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+  
+  /* Ensure all text is black for readability */
+  h2, h3, h4, p, strong {
+    color: #000 !important;
+  }
+  
+  /* Hide scrollbar for print */
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .detailed-results-modal {
+    padding: 10px;
+  }
+  
+  .detailed-results-modal-content {
+    padding: 20px !important;
+  }
+  
+  .exam-summary-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  
+  .nav-tabs {
+    flex-wrap: wrap;
+  }
+  
+  .nav-tabs .nav-link {
+    margin-bottom: 5px;
+  }
+}
+
+/* Accessibility improvements */
+.detailed-results-modal:focus {
+  outline: none;
+}
+
+.detailed-results-modal button:focus {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
+}
+
+/* Loading states */
+.loading-results {
+  text-align: center;
+  padding: 50px;
+  color: #6c757d;
+}
+
+/* Stats cards */
+.summary-stat-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.summary-stat-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}

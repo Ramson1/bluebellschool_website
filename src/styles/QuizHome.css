@@ -1,0 +1,192 @@
+.container {
+  max-width: 90%;
+  color: #000000;
+}
+
+.decorated-title {
+  font-family: 'Arial', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #000000;
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  /* margin-bottom: 30px; */
+  /* border-radius: 10px; */
+  /* background-color: #f8f9fa; */
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+  transition: transform 0.2s;
+}
+
+.itemInput{
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.374);
+  border-width: 5px;
+  border-color: white;
+}
+
+.decorated-title:hover {
+  transform: scale(1.05);
+}
+
+@media screen and (max-width: 768px) {
+  .decorated-title {
+    font-size: 1.5rem;
+  }
+  
+}
+
+.card {
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card-img-top {
+  height: 150px;
+  object-fit: cover;
+}
+
+.instructions {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: #000000;
+}
+
+.instructions h4 {
+  color: #000000;
+  margin-bottom: 15px;
+}
+
+.instructions ul {
+  padding-left: 20px;
+}
+
+.instructions li {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  color: #000000;
+}
+
+.filter-input {
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.2s;
+  color: #000000;
+  background-color: #ffffff;
+}
+
+.filter-input:focus {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  outline: none;
+}
+
+.passwordModal{
+    margin-top: 13%
+}
+
+@media screen and (max-width: 768px) {
+  .passwordModal{
+    margin-top: 60%
+}
+}
+
+/* Dark Mode Styles — driven by the explicit data-theme attribute on <html>
+   (set before paint by the theme-init script in app/layout.tsx: saved choice,
+   seeded from the OS preference). Toggle lives in the sidebar (src/utils/theme.js). */
+html[data-theme="dark"] .container {
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .decorated-title {
+  color: #ffffff !important;
+}
+
+/* Form labels (NAME, CURRENT TERM, CLASS, GENDER) */
+html[data-theme="dark"] .form-label,
+html[data-theme="dark"] label {
+  color: #ffffff !important;
+}
+
+/* Instructions section */
+html[data-theme="dark"] .instructions {
+  background-color: #1e1e1e !important;
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .instructions h4 {
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .instructions li {
+  color: #ffffff !important;
+}
+
+/* "Select Subject" heading */
+html[data-theme="dark"] h4 {
+  color: #ffffff !important;
+}
+
+/* Subject count text */
+html[data-theme="dark"] .text-muted {
+  color: #cccccc !important;
+}
+
+/* Session Type label */
+html[data-theme="dark"] .row.mb-3 label {
+  color: #ffffff !important;
+}
+
+/* Input fields - ensure text is visible */
+html[data-theme="dark"] .form-control,
+html[data-theme="dark"] .filter-input,
+html[data-theme="dark"] select.form-control {
+  color: #ffffff !important;
+  background-color: #2d2d2d !important;
+  border-color: #444444 !important;
+}
+
+/* Placeholder text */
+html[data-theme="dark"] .form-control::placeholder,
+html[data-theme="dark"] .filter-input::placeholder {
+  color: #999999 !important;
+}
+
+/* Select dropdown options */
+html[data-theme="dark"] select option {
+  background-color: #2d2d2d;
+  color: #ffffff;
+}
+
+/* Profile Picture label */
+html[data-theme="dark"] .form-group label {
+  color: #ffffff !important;
+}
+
+/* Card text in dark mode */
+html[data-theme="dark"] .card {
+  background-color: #1e1e1e !important;
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .card-body {
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .card-title {
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .card-text {
+  color: #ffffff !important;
+}
+
+/* Ensure "Showing X subjects" text is white */
+html[data-theme="dark"] p.text-muted {
+  color: #cccccc !important;
+}

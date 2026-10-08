@@ -1,0 +1,32 @@
+{
+  "name": "bluebellschool-website",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --webpack -p 3301",
+    "build": "next build",
+    "start": "next start -p 3301",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.89.0",
+    "bootstrap": "^5.3.8",
+    "compromise": "^14.15.0",
+    "next": "16.1.0",
+    "nodemailer": "^7.0.11",
+    "react": "19.2.3",
+    "react-bootstrap": "^2.10.10",
+    "react-dom": "19.2.3",
+    "react-icons": "^5.5.0",
+    "react-toastify": "^11.0.5"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.0",
+    "postcss": "^8.5.0",
+    "tailwindcss": "^4.1.0"
+  },
+  "overrides": {
+    "react": "19.2.3",
+    "react-dom": "19.2.3"
+  }
+}
