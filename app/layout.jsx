@@ -7,7 +7,7 @@ export const metadata = {
   title: "Bluebell School — Bluebell International School",
   description:
     "Bluebell International School — a values-driven international school education built on Wisdom, Integrity and Courage. Discover our programmes, facilities and admissions process.",
-  icons: { icon: "/favicon.ico" },
+  icons: { icon: "/favicon.ico?v=4", apple: "/apple-touch-icon.png" },
 };
 
 export default function RootLayout({ children }) {
