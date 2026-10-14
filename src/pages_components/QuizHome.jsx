@@ -192,7 +192,7 @@ const QuizHome = () => {
     ...Array.from({ length: 1 }, (_, i) => `Creche`),
     ...Array.from({ length: 2 }, (_, i) => `PreNursery${i + 1}`),
     ...Array.from({ length: 2 }, (_, i) => `Nursery ${i + 1}`),
-    ...Array.from({ length: 9 }, (_, i) => `Year ${i + 1}`),
+    ...Array.from({ length: 12 }, (_, i) => `Year ${i + 1}`),
   ];
 
   const sexOptions = ['Male', 'Female'];

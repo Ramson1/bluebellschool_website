@@ -956,9 +956,15 @@ const QuizComponent = () => {
 
   const normalizeSubjectKey = (value) => String(value || '').toLowerCase().replace(/[\s.]/g, '');
 
-  const termKeyFor = (term) => (term === "1st Term" ? "term1Subjects"
-    : term === "2nd Term" ? "term2Subjects"
-      : "term3Subjects");
+  const termKeyFor = (term) => {
+    // Accept both the CBT ("First Term") and results ("1st Term") conventions so
+    // a sitting is filed under the term the student actually selected.
+    const t = String(term || '').trim().toLowerCase();
+    if (t.startsWith('1') || t.startsWith('first')) return 'term1Subjects';
+    if (t.startsWith('2') || t.startsWith('second')) return 'term2Subjects';
+    if (t.startsWith('3') || t.startsWith('third')) return 'term3Subjects';
+    return 'term3Subjects';
+  };
 
   // The subject label stored for this class, so a paper named "Maths" still
   // updates the "Mathematics" row instead of creating a duplicate subject.
@@ -1113,7 +1119,7 @@ const QuizComponent = () => {
       const { error: insertError } = await supabase.from('bluebell_result').insert([{
         studentId: job.studentId,
         studentName: job.studentName,
-        studentClass: job.studentClass ? String(job.studentClass).toUpperCase() : "",
+        studentClass: job.studentClass || "",
         [termKey]: seeded,
       }]);
       if (insertError) {

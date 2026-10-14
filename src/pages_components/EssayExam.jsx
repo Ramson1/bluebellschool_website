@@ -421,7 +421,7 @@ const EssayExam = () => {
     const payload = {
       studentId: job.studentId,
       studentName: job.studentName,
-      studentClass: String(job.studentClass || '').toUpperCase(),
+      studentClass: job.studentClass,
       score: marks,
       totalQuestions: questionCount,
       percentage: max > 0 ? ((marks / max) * 100).toFixed(2) : '0',
