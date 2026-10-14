@@ -68,7 +68,7 @@ const QuizHome = () => {
     const fetchProfilePic = async () => {
       // Find matching student case-insensitively to ensure correct casing for DB query
       const matchedStudent = studentsOptions.find(s => 
-        s.name.toLowerCase() === name.toLowerCase().trim() && 
+        s.name.trim().toLowerCase() === name.toLowerCase().trim() && 
         s.class.toLowerCase().replace(/\s+/g, '') === newClass.toLowerCase().replace(/\s+/g, '')
       );
 
@@ -161,7 +161,7 @@ const QuizHome = () => {
   const handleStartExam = (subject, duration, purpose, maxScore) => {
     // Find matching student to ensure correct casing
     const matchedStudent = studentsOptions.find(s => 
-      s.name.toLowerCase() === name.toLowerCase().trim() && 
+      s.name.trim().toLowerCase() === name.toLowerCase().trim() && 
       s.class.toLowerCase().replace(/\s+/g, '') === newClass.toLowerCase().replace(/\s+/g, '')
     );
     
@@ -268,7 +268,7 @@ const QuizHome = () => {
   };
 
   const studentExists = studentsOptions.some(student => 
-    student.name.toLowerCase() === name.toLowerCase().trim() && 
+    student.name.trim().toLowerCase() === name.toLowerCase().trim() && 
     student.class.toLowerCase().replace(/\s+/g, '') === newClass.toLowerCase().replace(/\s+/g, '')
   );
   const isStartExamDisabled = !name || !newClass || !currentTerm || !newSex || !studentExists;
