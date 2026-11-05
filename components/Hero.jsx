@@ -32,7 +32,7 @@ export default function Hero() {
             style={{ opacity: i === idx ? 1 : 0 }}
           >
             {/* plain <img>: remote Supabase images avoid next/image width juggling */}
-            <img src={settingFileUrl(s.image)} alt={s.heading || "Bluebell school life"} className="w-full h-full object-cover" />
+            <img src={settingFileUrl(s.image)} alt={s.heading || "Black-Box school life"} className="w-full h-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/40 to-black/20" />
           </div>
         ))
@@ -44,10 +44,10 @@ export default function Hero() {
       <div className="relative h-full max-w-6xl mx-auto px-4 flex flex-col justify-end pb-16">
         <div className="max-w-2xl text-white">
           <span className="inline-block text-xs font-bold tracking-widest uppercase bg-white/15 border border-white/30 rounded-full px-3 py-1 mb-4">
-            Wisdom · Integrity · Courage
+            Discover · Design · Deliver
           </span>
           <h1 className="text-3xl md:text-5xl font-extrabold leading-tight">
-            {slide?.heading || "Bluebell International School"}
+            {slide?.heading || "Black-Box Institution"}
           </h1>
           <p className="mt-3 text-base md:text-lg text-white/90">
             {slide?.content ||

@@ -36,7 +36,7 @@ export default function Faq() {
       <div className="max-w-3xl mx-auto px-4">
         <h2 className="section-title text-center">Frequently asked questions</h2>
         <p className="section-sub mx-auto text-center">
-          Everything parents usually ask before joining Bluebell.
+          Everything parents usually ask before joining Black-Box.
         </p>
 
         <div className="mt-10 divide-y divide-gray-100 rounded-2xl border border-gray-100 shadow-sm overflow-hidden">

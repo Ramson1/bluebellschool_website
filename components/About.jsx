@@ -28,13 +28,13 @@ export default function About() {
             <div className="bg-white rounded-2xl shadow-sm p-7">
               <p className="italic text-gray-600 whitespace-pre-line">"{about.text2}"</p>
               <p className="mt-3 text-sm font-bold text-brand">
-                — The Principal, Bluebell International School
+                — The Principal, Black-Box Institution
               </p>
             </div>
           )}
           {!about?.text && !about?.text2 && (
             <p className="text-center text-gray-500">
-              Bluebell International School provides a nurturing,
+              Black-Box Institution provides a nurturing,
               values-driven education for every stage of a child's growth.
             </p>
           )}

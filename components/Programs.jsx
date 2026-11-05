@@ -11,7 +11,7 @@ import {
   RiShieldCheckLine,
 } from "react-icons/ri";
 
-// "Why Bluebell" strip + age-programme cards with curriculum highlights.
+// "Why Black-Box" strip + age-programme cards with curriculum highlights.
 const PROGRAMS = [
   {
     icon: <RiParentLine />,

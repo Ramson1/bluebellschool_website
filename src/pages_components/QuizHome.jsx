@@ -312,7 +312,7 @@ const QuizHome = () => {
         <div>
           <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: 'var(--container-bg, #f8f9fa)', marginBottom: '40px', padding: '20px', borderRadius: '15px', boxShadow: '0 4px 8px var(--shadow-color, rgba(0, 0, 0, 0.1))'}}>
             <img src={logo} alt="logo" style={{height: '130px', width: '130px'}} />
-            <h1 className="text-center decorated-title" style={{color: 'gray'}}>Welcome to Bluebell International School CBT Exam Portal</h1>
+            <h1 className="text-center decorated-title" style={{color: 'gray'}}>Welcome to Black-Box Institution CBT Exam Portal</h1>
           </div>
           <div className="row mb-4">
             <div className="col-md-6">

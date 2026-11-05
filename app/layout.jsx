@@ -4,9 +4,9 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
 export const metadata = {
-  title: "Bluebell School — Bluebell International School",
+  title: "Black-Box Institution",
   description:
-    "Bluebell International School — a values-driven international school education built on Wisdom, Integrity and Courage. Discover our programmes, facilities and admissions process.",
+    "Black-Box Institution — a values-driven international school education built on Discover, Design and Deliver. Discover our programmes, facilities and admissions process.",
   icons: { icon: "/favicon.ico?v=4", apple: "/apple-touch-icon.png" },
 };
 

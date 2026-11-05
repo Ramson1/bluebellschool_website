@@ -563,8 +563,8 @@ const QuizComponent = () => {
     // Determine school name based on class/year
     const schoolName = (newClass.toLowerCase().includes('year') && 
                        parseInt(newClass.split(' ')[1]) >= 7) 
-      ? 'Bluebell International High School'
-      : 'Bluebell International School';
+      ? 'Black-Box Institution'
+      : 'Black-Box Institution';
     
     // Create a new window for printing
     const printWindow = window.open('', '_blank');
@@ -900,7 +900,7 @@ const QuizComponent = () => {
 
   <div class="footer">
     <div><strong>Generated:</strong> ${new Date().toLocaleString()}</div>
-    <div>Bluebell CBT Examination System</div>
+    <div>Black-Box CBT Examination System</div>
   </div>
 
   <script>
@@ -1250,7 +1250,7 @@ Detailed Breakdown:
 ${detailedScores}
 
 ---
-Automated notification from Bluebell CBT System`;
+Automated notification from Black-Box CBT System`;
 
     // Delivered to the addresses this school configures — see src/utils/resultRecipients.js
     const recipients = await resolveResultRecipients(supabase);
@@ -1434,7 +1434,7 @@ Generated: ${new Date().toLocaleString()}
       <nav className="navbar navbar-light bg-light cbtNavbar">
         <div className="navbar-brand" style={{display: 'flex', gap: '20px', alignItems: 'center'}}>
           <img src={logo} width="60" height="60" className="d-inline-block align-top" alt="" />
-          <p style={{marginBottom: '0px', fontWeight: '600', wordWrap: 'break-word', textWrap: 'balance'}} className='headingText'>Bluebell International School</p>
+          <p style={{marginBottom: '0px', fontWeight: '600', wordWrap: 'break-word', textWrap: 'balance'}} className='headingText'>Black-Box Institution</p>
         </div>
         <span className={`navbar-text ${timeLeft <= 600 ? 'text-danger' : 'text-primary'}`} style={{fontSize: '1rem', fontWeight: '700'}}>
           {timeLeft === 0 ? 'TIME UP!' : `Time Left: ${formatTime(timeLeft)}`}

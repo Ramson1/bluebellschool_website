@@ -34,7 +34,7 @@ export default function News() {
       <div className="max-w-6xl mx-auto px-4">
         <h2 className="section-title text-center">News &amp; announcements</h2>
         <p className="section-sub mx-auto text-center">
-          The latest from the Bluebell community.
+          The latest from the Black-Box community.
         </p>
 
         <div className="grid md:grid-cols-3 gap-6 mt-10">

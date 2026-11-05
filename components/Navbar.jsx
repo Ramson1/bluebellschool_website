@@ -14,14 +14,14 @@ const LINKS = [
 ];
 
 // Sticky glass navbar. Student/Staff portal CTAs use env URLs when set and
-// fall back to the live student.bluebellschool.com / staff.bluebellschool.com addresses.
+// fall back to the live student.blackboxtech.online / staff.blackboxtech.online addresses.
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [portalOpen, setPortalOpen] = useState(false);
   const [mobilePortalOpen, setMobilePortalOpen] = useState(false);
   const dropdownRef = useRef(null);
-  const studentPortal = process.env.NEXT_PUBLIC_STUDENT_PORTAL_URL || "https://student.bluebellschool.com";
-  const staffPortal = process.env.NEXT_PUBLIC_STAFF_PORTAL_URL || "https://staff.bluebellschool.com";
+  const studentPortal = process.env.NEXT_PUBLIC_STUDENT_PORTAL_URL || "https://student.blackboxtech.online";
+  const staffPortal = process.env.NEXT_PUBLIC_STAFF_PORTAL_URL || "https://staff.blackboxtech.online";
   // Attendance app (Android APK on Google Drive) — for admin / security staff.
   const attendanceApp =
     process.env.NEXT_PUBLIC_ATTENDANCE_APP_URL ||
@@ -55,11 +55,11 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 backdrop-blur bg-white/85 border-b border-gray-100">
       <div className="max-w-6xl mx-auto px-4 h-16 flex items-center gap-3">
         <Link href="/" className="flex items-center gap-2 shrink-0">
-          <Image src="/logo.jpg" alt="Bluebell logo" width={40} height={40} className="rounded-full" priority />
+          <Image src="/logo.jpg" alt="Black-Box logo" width={40} height={40} className="rounded-full" priority />
           <span className="font-extrabold text-brand text-lg leading-tight">
-            Bluebell
+            Black-Box
             <span className="block text-[10px] font-semibold text-gray-500 tracking-wide">
-              Bluebell International School
+              Black-Box Institution
             </span>
           </span>
         </Link>

@@ -24,9 +24,9 @@ export default function Footer() {
         {/* Brand */}
         <div>
           <div className="flex items-center gap-3">
-            <Image src="/logo.jpg" alt="Bluebell logo" width={44} height={44} className="rounded-full" />
+            <Image src="/logo.jpg" alt="Black-Box logo" width={44} height={44} className="rounded-full" />
             <p className="font-extrabold leading-tight">
-              Bluebell
+              Black-Box
               <br />
               International School
             </p>
@@ -102,7 +102,7 @@ export default function Footer() {
 
       <div className="border-t border-white/10">
         <div className="max-w-6xl mx-auto px-4 py-5 flex flex-col md:flex-row items-center justify-between gap-2 text-xs text-white/50">
-          <p>© {year} Bluebell International School. All rights reserved.</p>
+          <p>© {year} Black-Box Institution. All rights reserved.</p>
           <p className="flex items-center gap-2 flex-wrap justify-center">
             <span>Powered by</span>
             <a

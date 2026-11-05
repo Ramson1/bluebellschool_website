@@ -29,7 +29,7 @@ const STEPS = [
   {
     icon: <RiGraduationCapLine />,
     t: "3 · Enroll",
-    d: "Receive the acceptance letter and fee list, complete payment and your child is ready to join the Bluebell family.",
+    d: "Receive the acceptance letter and fee list, complete payment and your child is ready to join the Black-Box family.",
   },
 ];
 
@@ -67,7 +67,7 @@ export default function AdmissionsPage() {
     <section className="py-16 bg-brand-soft/40 min-h-[70vh]">
       <ToastContainer position="top-center" />
       <div className="max-w-5xl mx-auto px-4">
-        <h1 className="section-title text-center">Admissions at Bluebell</h1>
+        <h1 className="section-title text-center">Admissions at Black-Box</h1>
         <p className="section-sub mx-auto text-center">
           Joining our school is simple — three steps from first visit to first day.
         </p>

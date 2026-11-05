@@ -23,7 +23,7 @@ export default function Gallery() {
       <div className="max-w-6xl mx-auto px-4">
         <h2 className="section-title text-center">School life in pictures</h2>
         <p className="section-sub mx-auto text-center">
-          Moments from classrooms, events and everyday joy at Bluebell.
+          Moments from classrooms, events and everyday joy at Black-Box.
         </p>
 
         {visible.length ? (

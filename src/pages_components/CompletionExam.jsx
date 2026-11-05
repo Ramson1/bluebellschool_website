@@ -517,7 +517,7 @@ Detailed Breakdown:
 ${detailedScores}
 
 ---
-Automated notification from Bluebell CBT System`;
+Automated notification from Black-Box CBT System`;
 
     // Delivered to the addresses this school configures — see src/utils/resultRecipients.js
     const recipients = await resolveResultRecipients(supabase);
