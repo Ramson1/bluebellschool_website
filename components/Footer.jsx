@@ -28,7 +28,7 @@ export default function Footer() {
             <p className="font-extrabold leading-tight">
               Black-Box
               <br />
-              International School
+              Institution
             </p>
           </div>
           <p className="text-sm text-white/60 mt-4 leading-relaxed">
