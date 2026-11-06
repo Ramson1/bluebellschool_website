@@ -11,11 +11,16 @@ import {
   RiGlobalLine,
 } from "react-icons/ri";
 
-// Site footer: school contact block (from bluebell_settings.contactContent) plus
-// the Black-Box Tech credit linking to https://blackboxtech.online.
+// Site footer: school contact block (Black-Box contact below) plus the
+// Black-Box Tech credit linking to https://blackboxtech.online.
 export default function Footer() {
   const { settings } = useSettings();
-  const contact = settings?.contactContent || {};
+  const contact = {
+    ...(settings?.contactContent || {}),
+    address: "off Elelenow Road, Port Harcourt, Rivers State",
+    phone: "+2348050205349",
+    email: "info@blackboxtech.online",
+  };
   const year = new Date().getFullYear();
 
   return (
